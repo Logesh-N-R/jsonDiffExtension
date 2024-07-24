@@ -18,11 +18,19 @@
 		}
 
 		body {
+			padding: 20px;
+			display: flex;
+			flex-direction: column;
+			margin: 0px auto;
 			background: var(--bgColor);
 			color: var(--textColor);
 			font-size: 12px;
 			font-family: Sans-Serif;
-			width: 700px;
+			width: 90%;
+			min-width: 750px;
+		}
+		.row{
+			width: 100%;
 		}
 
 		h2 {
@@ -131,30 +139,37 @@
 </head>
 
 <body id="container">
-	<h1 class="top">JSON diff tool</h1>
-	<div class="textInput">
-		<h2>First Text</h2>
-		<textarea id="baseText"></textarea>
+	<div class="row">
+		<h1 class="top">JSON diff tool</h1>
+		<div class="textInput">
+			<h2>First Text</h2>
+			<textarea id="baseText"></textarea>
+		</div>
+		<div class="textInput spacer">
+			<h2>Second Text</h2>
+			<textarea id="newText"></textarea>
+		</div>
 	</div>
-	<div class="textInput spacer">
-		<h2>Second Text</h2>
-		<textarea id="newText"></textarea>
+	<div  class="row">
+		<div class="viewType">
+			<input type="radio" name="_viewtype" id="sidebyside" /> <label for="sidebyside">Side by Side Diff</label>
+			&nbsp; &nbsp;
+			<input type="radio" name="_viewtype" id="inline" /> <label for="inline">Inline Diff</label>
+		</div>
+		<div class="outputCon">
+			<div id="diffoutput" width="1000px"></div>
+		</div>
 	</div>
-	<div class="viewType">
-		<input type="radio" name="_viewtype" id="sidebyside" /> <label for="sidebyside">Side by Side Diff</label>
-		&nbsp; &nbsp;
-		<input type="radio" name="_viewtype" id="inline" /> <label for="inline">Inline Diff</label>
-	</div>
-	<div class="outputCon">
-		<div id="diffoutput" width="1000px"></div>
-	</div>
-	<div class="textInput">
-		<h2>Formatted First Text</h2>
-		<div contenteditable="true" id="formattedBaseText" class="jsonView"></div>
-	</div>
-	<div class="textInput spacer">
-		<h2>Formatted Second Text</h2>
-		<div contenteditable="true" id="formattedNewText" class="jsonView"></div>
+	<div  class="row">
+		<div class="textInput">
+			<h2>Formatted First Text</h2>
+			<div contenteditable="true" id="formattedBaseText" class="jsonView"></div>
+		</div>
+		<div class="textInput spacer">
+			<h2>Formatted Second Text</h2>
+			<div contenteditable="true" id="formattedNewText" class="jsonView"></div>
+		</div>
+		
 	</div>
 	<script src="./base.js"></script>
 </body>
