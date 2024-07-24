@@ -1,4 +1,8 @@
 # jsonDiffExtention
-used jsdifflib codes for the comparision and added the formatter
+Use the new.html file to start the application
 
-https://github.com/cemerick/jsdifflib refer for the code of diff
+can be added as chrome extension
+refer https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world
+
+used jsdifflib codes for the comparision and added the formatter
+refer https://github.com/cemerick/jsdifflib
