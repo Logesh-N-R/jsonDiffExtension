@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<title>JSON diff</title>
+	<link rel="stylesheet" type="text/css" href="diffview.css" />
+	<script type="text/javascript" src="diffview.js"></script>
+	<script type="text/javascript" src="difflib.js"></script>
+	<style type="text/css">
+		:root {
+			--bgColor: rgb(35, 47, 57);
+			--subbgColor: rgb(39, 35, 28);
+			--headerbgColor: rgb(47, 31, 3);
+			--textColor: rgb(221, 218, 218);
+			--subtextColor: rgb(207, 207, 233);
+		}
+
+		body {
+			background: var(--bgColor);
+			color: var(--textColor);
+			font-size: 12px;
+			font-family: Sans-Serif;
+			width: 700px;
+		}
+
+		h2 {
+			text-align: center;
+		}
+
+		.top {
+			text-align: center;
+		}
+
+		.textInput {
+			border-radius: 10px;
+			border: 1px solid var(--subbgColor);
+			background-color: var(--subbgColor);
+			display: block;
+			width: 49%;
+			float: left;
+		}
+
+		textarea {
+			border: 1px solid var(--subtextColor);
+			background-color: var(--subbgColor);
+			color: var(--subtextColor);
+			width: 100%;
+			height: 300px;
+		}
+
+		label:hover {
+			text-decoration: underline;
+			cursor: pointer;
+		}
+
+		.spacer {
+			margin-left: 10px;
+		}
+
+		.viewType {
+			font-size: 16px;
+			clear: both;
+			text-align: center;
+			padding: 1em;
+		}
+
+		#diffoutput {
+			overflow-x: auto;
+		}
+
+		.outputCon {
+			display: flex;
+			justify-content: center;
+		}
+
+		.jsonView {
+			border: 1px solid var(--subtextColor);
+			width: 100%;
+			height: 300px;
+			background-color: var(--subbgColor);
+			color: var(--subtextColor);
+			overflow-y: auto;
+			padding: 10px;
+			box-sizing: border-box;
+			white-space: pre-wrap;
+		}
+
+		.key {
+			color: #c0c0c0;
+		}
+
+		.string-key {
+			color: #add8e6;
+		}
+
+		.string-value {
+			color: #ffa07a;
+		}
+
+		.number {
+			color: #87cefa;
+		}
+
+		.boolean {
+			color: #ffd700;
+		}
+
+		.null {
+			color: #ff00ff;
+		}
+
+		::-webkit-scrollbar {
+			width: 5px;
+		}
+
+		::-webkit-scrollbar-track {
+			background: #8e8a8a;
+		}
+
+		::-webkit-scrollbar-thumb {
+			border-radius: 10px;
+			background: #ded9d9;
+		}
+
+		::-webkit-scrollbar-thumb:hover {
+			background: #d8d1d1;
+		}
+	</style>
+</head>
+
+<body id="container">
+	<h1 class="top">JSON diff tool</h1>
+	<div class="textInput">
+		<h2>First Text</h2>
+		<textarea id="baseText"></textarea>
+	</div>
+	<div class="textInput spacer">
+		<h2>Second Text</h2>
+		<textarea id="newText"></textarea>
+	</div>
+	<div class="viewType">
+		<input type="radio" name="_viewtype" id="sidebyside" /> <label for="sidebyside">Side by Side Diff</label>
+		&nbsp; &nbsp;
+		<input type="radio" name="_viewtype" id="inline" /> <label for="inline">Inline Diff</label>
+	</div>
+	<div class="outputCon">
+		<div id="diffoutput" width="1000px"></div>
+	</div>
+	<div class="textInput">
+		<h2>Formatted First Text</h2>
+		<div contenteditable="true" id="formattedBaseText" class="jsonView"></div>
+	</div>
+	<div class="textInput spacer">
+		<h2>Formatted Second Text</h2>
+		<div contenteditable="true" id="formattedNewText" class="jsonView"></div>
+	</div>
+	<script src="./base.js"></script>
+</body>
+
+</html>
