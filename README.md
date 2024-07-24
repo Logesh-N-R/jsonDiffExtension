@@ -1,5 +1,5 @@
 # jsonDiffExtension
-try it using https://logesh-n-r.github.io/jsonDiffExtension/new.html
+try it using https://logesh-n-r.github.io/jsonDiffExtension/index.html
 Use the new.html file to start the application
 
 can be added as chrome extension
